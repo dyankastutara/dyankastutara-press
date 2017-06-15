@@ -6,7 +6,6 @@ module.exports = {
   signup: (req, res) => {
     User.findOne({username: req.body.username})
       .then(result => {
-        console.log(result)
         if (result == null) {
           var signupUser = new User({
             name: req.body.name,

@@ -12,6 +12,7 @@ module.exports = {
       })
   },
   create: (req, res) => {
+    console.log(req.decoded)
     var newArticle = new Article({
       title: req.body.title,
       content: req.body.content,

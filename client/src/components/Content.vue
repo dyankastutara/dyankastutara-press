@@ -7,9 +7,11 @@
         </p>
       </div>
       <div class="column">
+        <router-link to='/add-article'><a>Create Article</a></router-link>
         <Card :bordered="true" v-for="article in articles">
           <p slot="title">{{article.title}}</p>
-          <p>{{article.content}}</p>
+          <p>{{article.content}}</p><br><br>
+          <p><button >Delete</button></p>
       </Card>
       </div>
     </div>
