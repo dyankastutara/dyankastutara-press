@@ -35,6 +35,7 @@ module.exports = {
         if (result != null) {
           if (bcrypt.compareSync(req.body.password, result.password)) {
             var token = jwt.sign({
+              id: result._id,
               name: result.name,
               username: result.username
             }, 'secretnya jangan lupa')

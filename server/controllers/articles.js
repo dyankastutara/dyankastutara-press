@@ -1,4 +1,4 @@
-const Article = require('../models/articles')
+const Article = require('../models/article')
 
 module.exports = {
   getAll: (req, res) => {
@@ -16,7 +16,7 @@ module.exports = {
       title: req.body.title,
       content: req.body.content,
       category: req.body.category,
-      author: req.decoded._id
+      author: req.decoded.id
     })
 
     newArticle.save((err, result) => {
