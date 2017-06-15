@@ -11,7 +11,7 @@
         <Card :bordered="true" v-for="article in articles">
           <p slot="title">{{article.title}}</p>
           <p>{{article.content}}</p><br><br>
-          <p><button >Delete</button></p>
+          <p><button @click='deleteArticle'>Delete</button></p>
       </Card>
       </div>
     </div>
@@ -24,7 +24,10 @@ export default {
   methods : {
     getArticle(){
       this.$store.dispatch('getArticles')
-    }
+    },
+    ...mapActions([
+      'deleteArticle'
+    ])
   },
   computed : {
     ...mapState([
